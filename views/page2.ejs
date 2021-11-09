@@ -9,32 +9,19 @@
         <h1>
             Select a country and enter a zip code
         </h1>
-        <form action="/addToDo" method="POST">
-            <input type = "text" name="newtodo" placeholder="add new item">
+        <form action="/zip" method="POST">
+            <label for="cars">Choose a country:</label>
+                <select name="country" id="country">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+                </select>
+                <br><br>
+            <input type = "text" name="zip" placeholder="Please enter a zipcode">
             <button type = 'submit'>
-                Add To-Do 
-            </button>
-            <h2>
-                Current Tasks
-            </h2>
-            <% for(var i = 0; i< tasks.length; i++){ %>
-                <li><input type="checkbox" name="check" value="<%= tasks[i]._id %>" /> <%= tasks[i].item %></li>
-            <%} %>
-        
-            <button formaction="/removeToDo" type="submit">
-                Remove
+                Submit
             </button>
         </form>
-        <form action='/deleteToDo'' method="POST">
-        <h2>
-            Completed Tasks
-        </h2>
-        <% for(var i = 0; i< completed.length; i++){ %>
-            <li><input type="checkbox" name="delete" value= "<%= completed[i]._id %>" /> <%= completed[i].item %></li>
-        <% } %>
-        <button formaction='/deleteToDo' type="submit">
-            Delete
-        </button>
-    </form>
     </body>
 </html>

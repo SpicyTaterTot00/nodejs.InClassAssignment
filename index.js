@@ -94,7 +94,14 @@ app.post('/deleteToDo', function(req,res){
     }res.redirect('/');
 })
 
+app.get('/zip', function(request, response){
+    
+ })
 
+ app.post('/zip', function(req,res){
+    
+    })
+    
 app.listen(3000, function(){
     console.log('App is running on port 3000');
 })
