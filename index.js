@@ -4,12 +4,13 @@ let express = require('express');
 let bodyParser= require('body-parser');
 let mongoose = require('mongoose');
 const ToDo = require('./models/todo.model');
-//const Zip = require('./models/zip.model')
+const Zip = require('./models/zip.model')
 
 var app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended : true}));
 //app.use(express.static('public'));
+//app.use('/zip', Zip)
 
 //Connection to Mongo
 const mongoDB = 'mongodb+srv://admin:admin@cluster0.q756k.mongodb.net/todo?retryWrites=true&w=majority';
@@ -97,13 +98,6 @@ app.post('/deleteToDo', function(req,res){
     }
 })
 
-app.get('/zip', (req, res) => {
-    res.sendFile(__dirname + '/views/page2.ejs')
- })
-
-//  app.post('/zip', function(req,res){
-    
-//     })
     
 app.listen(3000, function(){
     console.log('App is running on port 3000');
