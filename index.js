@@ -3,6 +3,7 @@ let express = require('express');
 let bodyParser= require('body-parser');
 let mongoose = require('mongoose');
 const ToDo = require('./models/todo.model');
+const Zip = require('./models/zip.model')
 
 var app = express();
 app.set('view engine', 'ejs');
