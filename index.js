@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+
 let express = require('express');
 let bodyParser= require('body-parser');
 let mongoose = require('mongoose');
@@ -90,17 +90,17 @@ app.post('/deleteToDo', function(req,res){
                     console.log(err);
                 }
             })
-        }
-    }res.redirect('/');
+        }res.redirect('/');
+    }
 })
 
-app.get('/zip', function(request, response){
+// app.get('/zip', function(request, response){
     
- })
+//  })
 
- app.post('/zip', function(req,res){
+//  app.post('/zip', function(req,res){
     
-    })
+//     })
     
 app.listen(3000, function(){
     console.log('App is running on port 3000');
