@@ -3,11 +3,11 @@
         <title>
             To-do
         </title>
-        <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+        <%- include("templates/styles.ejs"); %>
     </head>
     
     <body>
-        <%- include("templates/header.ejs") %>
+        <%- include("templates/header.ejs"); %>
 
         <h1>
             My To-do list
