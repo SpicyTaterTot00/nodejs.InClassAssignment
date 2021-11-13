@@ -109,7 +109,7 @@ app.get('/zip', function(request, response){
  })
 
  app.post('/zip', function(req,res){
-    fetch('your URL with parameters goes here')
+    fetch('https://api.zippopotam.us')
     .then(res => res.json())
     .then(data => {
         // set the response to your global variable here
