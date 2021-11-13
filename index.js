@@ -99,7 +99,7 @@ app.post('/deleteToDo', function(req,res){
 })
 
 app.get('/zip', function(request, response){
-    ToDo.find(function(err, todo){
+    Zip.find(function(err, zip){
         if(err){
             console.log(err);
         }else{
@@ -109,6 +109,12 @@ app.get('/zip', function(request, response){
  })
 
  app.post('/zip', function(req,res){
+    fetch('your URL with parameters goes here')
+    .then(res => res.json())
+    .then(data => {
+        // set the response to your global variable here
+        res.redirect('/page2');
+    });
 
  })
 
