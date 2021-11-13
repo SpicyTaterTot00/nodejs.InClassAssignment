@@ -98,6 +98,19 @@ app.post('/deleteToDo', function(req,res){
     }
 })
 
+app.get('/zip', function(request, response){
+    ToDo.find(function(err, todo){
+        if(err){
+            console.log(err);
+        }else{
+            response.render('page2');
+        }
+    })
+ })
+
+ app.post('/zip', function(req,res){
+
+ })
 
     
 app.listen(3000, function(){
