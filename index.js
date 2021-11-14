@@ -1,5 +1,6 @@
 
-const fetch = require('node-fetch');
+// mod.cjs
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 let express = require('express');
 let bodyParser= require('body-parser');
 let mongoose = require('mongoose');
