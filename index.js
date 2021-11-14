@@ -114,6 +114,8 @@ app.get('/zip', function(request, response){
     .then(res => res.json())
     .then(data => {
         // set the response to your global variable here
+       // options.country - Country to query for from the server
+       // [options.code] - Zip code to query for from the server, should match the codes of the country
         console.log(zip);
         res.redirect('/page2');
     });
