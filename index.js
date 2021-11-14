@@ -1,5 +1,5 @@
 
-
+const fetch = require('node-fetch');
 let express = require('express');
 let bodyParser= require('body-parser');
 let mongoose = require('mongoose');
@@ -113,6 +113,7 @@ app.get('/zip', function(request, response){
     .then(res => res.json())
     .then(data => {
         // set the response to your global variable here
+        console.log(zip);
         res.redirect('/page2');
     });
 
