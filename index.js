@@ -104,18 +104,20 @@ app.get('/zip', function(request, response){
         if(err){
             console.log(err);
         }else{
+            //var country = document.getElementById('country');
+            //var zip = document.getElementById('zip');
             response.render('page2');
         }
     })
  })
 
  app.post('/zip', function(req,res){
-    fetch('https://api.zippopotam.us')
+    fetch('https://api.zippopotam.us',options)
     .then(res => res.json())
     .then(data => {
         // set the response to your global variable here
-       // options.country - Country to query for from the server
-       // [options.code] - Zip code to query for from the server, should match the codes of the country
+        const country= req.body.country;
+        const zip= req.body.zip;
         console.log(zip);
         res.redirect('/page2');
     });

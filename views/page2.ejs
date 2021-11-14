@@ -12,7 +12,7 @@
         </h1>
         <form action="/zip" method="POST">
             <label for="countries">Choose a country:</label>
-                <select name="country" id="country">
+                <select name="country" id="country" placeholder="Please select a Country">
                 <option value="ES">Spain</option>
                 <option value="IT">Italy</option>
                 <option value="FR">France</option>
@@ -25,10 +25,20 @@
                 <option value="PR">Puerto Rico</option>
                 </select>
                 <br><br>
-            <input type = "text" name="zip" placeholder="Please enter a zipcode">
-            <button type = 'submit'>
+            <input type = "number" name="zip" id= "zip" placeholder="Please enter a zipcode">
+            <button type = 'submit'onkeypress="return isNumberKey(event)">
                 Submit
             </button>
         </form>
+        <h3>
+            Your Information:
+        </h3>
     </body>
 </html>
+
+<% function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}%>
