@@ -10,8 +10,8 @@ const Zip = require('./models/zip.model')
 var app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended : true}));
-//app.use(express.static('public'));
-//app.use('/zip', Zip)
+app.use(express.static('public'));
+
 
 //Connection to Mongo
 const mongoDB = 'mongodb+srv://admin:admin@cluster0.q756k.mongodb.net/todo?retryWrites=true&w=majority';
@@ -112,7 +112,7 @@ app.get('/zip', function(request, response){
  })
 
  app.post('/zip', function(req,res){
-    fetch('https://api.zippopotam.us',options)
+    fetch('https://api.zippopotam.us',country,zip)
     .then(res => res.json())
     .then(data => {
         // set the response to your global variable here
